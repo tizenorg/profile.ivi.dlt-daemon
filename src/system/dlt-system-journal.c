@@ -88,6 +88,9 @@ void journal_clean_strcpy(const char* src,char* target,int max_size)
 {
 	if(max_size<1)
 		return;
+
+	memset(target,0,max_size);
+
 	while(*src!=0)
 	{
 		if(max_size>1)
