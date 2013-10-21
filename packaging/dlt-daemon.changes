@@ -1,0 +1,4 @@
+* Mon Oct 21 2013 Mikko Ylinen <mikko.ylinen@intel.com> v2.2.0@aa1cca1
+- Clear target msg buffer before copy
+- Skip dlt-example-user.service install if WITH_DLT_EXAMPLES=OFF
+- Initial Tizen release
