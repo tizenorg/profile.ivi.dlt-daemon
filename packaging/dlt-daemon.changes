@@ -1,3 +1,8 @@
+* Tue Dec 03 2013 Mikko Ylinen <mikko.ylinen@intel.com> accepted/tizen_ivi_stable/20131116.012347@b106a6d
+- Make Tizen ECUId = TIZ1
+- Enable Journal in dlt-system.conf
+- Run dlt-daemon and dlt-system as root
+
 * Mon Oct 21 2013 Mikko Ylinen <mikko.ylinen@intel.com> v2.2.0@aa1cca1
 - Clear target msg buffer before copy
 - Skip dlt-example-user.service install if WITH_DLT_EXAMPLES=OFF
