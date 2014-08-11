@@ -2,12 +2,14 @@ Name:             dlt
 License:          MPL-2.0
 Group:            Automotive/GENIVI
 Summary:          GENIVI Diagnostic Log and Trace
-Version:          2.9.1
+Version:          2.11.0
 Release:          1
 Source:           %{name}-%{version}.tar.bz2
 BuildRequires:    cmake
-BuildRequires:	  pkgconfig(zlib)
-BuildRequires:	  pkgconfig(libsystemd-journal)
+BuildRequires:    pkg-config
+BuildRequires:    pkgconfig(dbus-1)
+BuildRequires:    pkgconfig(zlib)
+BuildRequires:    pkgconfig(libsystemd-journal)
 Requires(post):   /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 
@@ -83,6 +85,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %defattr(-,root,root,-)
 %{_bindir}/dlt-adaptor*
 %{_bindir}/dlt-convert
+%{_bindir}/dlt-dbus
 %{_bindir}/dlt-receive
 %{_bindir}/dlt-system
 %{_bindir}/dlt-control
@@ -90,6 +93,8 @@ rm -rf "$RPM_BUILD_ROOT"
 %{_prefix}/lib/systemd/system/dlt-adaptor-udp.service
 %{_prefix}/lib/systemd/system/dlt-receive.service
 %{_prefix}/lib/systemd/system/dlt-system.service
+%{_prefix}/lib/systemd/system/dlt-dbus.service
+%config %{_sysconfdir}/dlt-dbus.conf
 
 %files -n libdlt
 %defattr(-,root,root,-)
