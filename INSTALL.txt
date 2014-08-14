@@ -33,7 +33,9 @@ Compile options with default values
 | WITH_GPROF             | OFF   | Set \-pg to compile flags
 | WITH_MAN               | ON    | Set to OFF to skip building of man pages
 | BUILD_SHARED_LIBS      | ON    | Set to OFF to build static libraries
-| CMAKE_INSTALL_PREFIX   | /usr/local | 
+| CMAKE_INSTALL_PREFIX   | /usr  |
+| CMAKE_SYSCONFDIR       | /etc  |
+| CMAKE_SHAREDIR         | /usr/share |
 | CMAKE_BUILD_TYPE       | RelWithDebInfo | 
 |==============================================================================================
 
