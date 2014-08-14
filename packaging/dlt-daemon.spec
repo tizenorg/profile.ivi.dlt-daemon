@@ -3,7 +3,7 @@ License:          MPL-2.0
 Group:            Automotive/GENIVI
 Summary:          GENIVI Diagnostic Log and Trace
 Version:          2.11.0
-Release:          1
+Release:          0
 Source:           %{name}-%{version}.tar.bz2
 BuildRequires:    cmake
 BuildRequires:    pkg-config
@@ -17,25 +17,25 @@ Requires(postun): /sbin/ldconfig
 GENIVI Diagnostic Log and Tracing Daemon and Tools
 
 %package daemon
-Summary:	GENIVI DLT Daemon
+Summary:    GENIVI DLT Daemon
 
 %description daemon
 GENIVI Diagnostic Log and Tracing Daemon
 
 %package bin
-Summary:	GENIVI DLT utility binaries
+Summary:    GENIVI DLT utility binaries
 
 %description bin
 GENIVI DLT utility binaries
 
 %package test
-Summary:	GENIVI DLT test binaries
+Summary:    GENIVI DLT test binaries
 
 %description test
 GENIVI DLT test binaries
 
 %package -n libdlt
-Summary:	GENIVI DLT library
+Summary:    GENIVI DLT library
 
 %description -n libdlt
 GENIVI DLT library
@@ -51,12 +51,12 @@ Files needed for developing against the Automotive DLT
 %setup -q -n %{name}-%{version}
 
 %build
-mkdir build
+mkdir -p build
 cd build
 
 cmake -DWITH_SYSTEMD=ON -DWITH_SYSTEMD_JOURNAL=ON \
       -DWITH_MAN=OFF -DWITH_DLT_EXAMPLES=OFF ..
-make %{?jobs:-j %jobs}
+make %{?_smp_mflags}
 
 %install
 rm -rf "$RPM_BUILD_ROOT"
@@ -75,6 +75,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %{_bindir}/dlt-daemon
 %config %{_sysconfdir}/dlt.conf
 %{_prefix}/lib/systemd/system/dlt.service
+%license MPL.txt
 
 %files test
 %defattr(-,root,root,-)
