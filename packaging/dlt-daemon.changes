@@ -1,3 +1,6 @@
+* Wed Aug 20 2014 Mikko Ylinen <mikko.ylinen@intel.com> accepted/tizen/ivi/20140811.124034-1-ga3ac967
+- Clean spec file for Yocto compatibility
+
 * Mon Aug 11 2014 Mikko Ylinen <mikko.ylinen@intel.com> v2.2.0-368-gd15c68f
 - New upstream release (dlt-daemon v2.11.0)
 - Enable D-Bus tracing feature introduced in the latest upstream release
