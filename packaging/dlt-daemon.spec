@@ -54,8 +54,8 @@ Files needed for developing against the Automotive DLT
 mkdir -p build
 cd build
 
-cmake -DWITH_SYSTEMD=ON -DWITH_SYSTEMD_JOURNAL=ON \
-      -DWITH_MAN=OFF -DWITH_DLT_EXAMPLES=OFF ..
+%cmake -DWITH_SYSTEMD=ON -DWITH_SYSTEMD_JOURNAL=ON \
+       -DWITH_MAN=OFF -DWITH_DLT_EXAMPLES=OFF ..
 make %{?_smp_mflags}
 
 %install
